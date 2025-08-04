@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   const feedbackDiv = document.getElementById('form-feedback');
 
 
-  form.addEventListener('submit', (e) => {
+  function handleFormSubmit(e){
     e.preventDefault();
     const username = document.getElementById('username').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -40,7 +40,9 @@ document.addEventListener('DOMContentLoaded',()=> {
       feedbackDiv.innerHTML = messages.join('<br>');
       feedbackDiv.style.color = '#dc3545';
     }
-  });
-  
+
+  }
+  form.addEventListener('submit', handleFormSubmit);
+    
 });
 
